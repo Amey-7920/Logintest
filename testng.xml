@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite [
+        <!ELEMENT suite (listeners|test)*>
+        <!ATTLIST suite
+                name CDATA #REQUIRED>
+        <!ELEMENT listeners (listener)*>
+        <!ELEMENT listener (#PCDATA)>
+        <!ATTLIST listener
+                class-name CDATA #REQUIRED>
+        <!ELEMENT test (classes)*>
+        <!ATTLIST test
+                name CDATA #REQUIRED>
+        <!ELEMENT classes (class)*>
+        <!ELEMENT class (#PCDATA)>
+        <!ATTLIST class
+                name CDATA #REQUIRED>
+        ]>
+<suite name="All Test Suite">
+
+    <!-- Add Extent Report Listener -->
+    <listeners>
+        <listener class-name="extenthtmlreporter.ExtentHtmlReporter" />
+    </listeners>
+
+    <!-- Test Configuration -->
+    <test name="Test">
+        <classes>
+            <!-- Specify the class containing the test (e.g., LoginTest) -->
+            <class name="LoginTest" />
+        </classes>
+    </test>
+
+</suite>
+
